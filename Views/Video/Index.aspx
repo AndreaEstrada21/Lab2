@@ -7,6 +7,17 @@
     <title>Index</title>
 </head>
 <body>
-    Lista de videos
+     Hay <%: ((System.Data.DataTable)ViewData["video"]).Rows.Count %> videos
+    <br />
+    <%
+        foreach (System.Data.DataRow ren in ((System.Data.DataTable)ViewData["video"]).Rows)
+        {%>
+
+        <p> <%: ren["titulo"].ToString()%> </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QiZaVclKXds" 
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+        <%
+        } %>
 </body>
 </html>
